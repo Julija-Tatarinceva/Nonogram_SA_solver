@@ -1,0 +1,36 @@
+{
+  "timestamp_utc": "2026-10-10T19:35:50.006473+00:00",
+  "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Python314\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "AMD Ryzen 5 9600X 6-Core Processor",
+  "logical_processors": 12,
+  "samples": 10418625,
+  "runs": 5,
+  "seed": 0,
+  "max_patterns": 100000,
+  "results": [
+    {
+      "input": "examples\\house_10.txt",
+      "combinations": "10418625",
+      "checked_per_run": 10418625,
+      "full_scan": true,
+      "preparation_seconds": 3.730000025825575e-05,
+      "scan_seconds_mean": 11.613326360000793,
+      "scan_seconds_sd": 0.056517124386575045,
+      "checks_per_second": 897126.6867935751,
+      "rate_min": 892830.1410971561,
+      "rate_max": 904312.7977008407,
+      "solutions_per_run": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "full_scan_seconds_measured": 11.613326360000793,
+      "full_scan_seconds_estimate_log10": null
+    }
+  ],
+  "method": "Full-board checks; no prefix pruning; never stops at the first solution. Partial scans use random contiguous windows. Full-space times for partial scans are extrapolations."
+}

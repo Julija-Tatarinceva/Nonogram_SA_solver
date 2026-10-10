@@ -263,21 +263,32 @@ Katras šūnas vērtība: atrasto risinājumu skaits no 10 palaišanām.
 
 Sparse_30 un sparse_50 netika atrisināti nevienā no 40 palaišanām katram piemēram. House_50 abos jauktajos režīmos atrisināts 10/10. Tātad grūtību nosaka arī norāžu struktūra. Sparse_50 vienai līnijai ir līdz 65 780 variantiem; atkārtots kolonnu soda aprēķins būtiski pagarina meklēšanu. Lielajiem sparse piemēriem ir liela ietekme uz kopējo vidējo laiku. Desmit palaišanas vienai matricai neļauj noteikt universāli labāko gājienu proporciju.
 
-## Pilnās pārlases ātruma tests
+## Salīdzinājums ar pilno pārlasi
 
-| Matrica | Pārbaudes vienā atkārtojumā | Vidējais laiks ± SD, s | Pārbaudes sekundē |
-| --- | --- | --- | --- |
-| sparse_5.txt | 1875 | 0,001573 ± 0,000007 | 1 191 838 |
-| sparse_10.txt | 100000 | 0,107667 ± 0,009743 | 928 790 |
-| sparse_15.txt | 100000 | 0,137503 ± 0,030738 | 727 257 |
-| sparse_20.txt | 100000 | 0,142033 ± 0,003827 | 704 064 |
-| sparse_30.txt | 100000 | 0,192752 ± 0,001941 | 518 803 |
-| sparse_50.txt | 100000 | 0,331461 ± 0,006148 | 301 695 |
+| Testa piemērs | Matricu kombināciju skaits | Pilnas pārlases laiks* | SA vidējais kopējais laiks (50%) | SA atrisināts |
+| --- | ---: | ---: | ---: | ---: |
+| [house_5](examples/house_5.txt) | 90 | 0,000098 s | 0,000142 s | 10/10 |
+| [house_10](examples/house_10.txt) | 1,04 × 10^7 | 11,61 s | 0,015125 s | 10/10 |
+| [house_15](examples/house_15.txt) | 6,34 × 10^13 | 2,92 g. | 0,052911 s | 10/10 |
+| [house_20](examples/house_20.txt) | 5,66 × 10^21 | 2,60 × 10^8 g. | 0,076060 s | 10/10 |
+| [house_30](examples/house_30.txt) | 2,05 × 10^37 | 1,40 × 10^24 g. | 0,116431 s | 10/10 |
+| [house_50](examples/house_50.txt) | 4,82 × 10^75 | 6,03 × 10^62 g. | 0,247835 s | 10/10 |
 
-Katram piemēram veikti pieci atkārtojumi. Sparse_5 pārlasīta pilnībā; pārējiem mērīti pieci 100 000 kombināciju fragmenti. Tabulas laiks ietver kombināciju ģenerēšanu un kolonnu pārbaudi, bet ne rindu variantu sagatavošanu. Pirmā risinājuma atrašanas laiks šajā testā netiek mērīts.
+*Pilna pārlase `house_5` un `house_10` faktiski veikta piecas reizes; tabulā norādīts vidējais laiks. Pārējiem piemēriem laiks ir aptuvena ekstrapolācija: katrā no piecām palaišanām pārbaudītas 100 000 kombinācijas nejauši izvēlētā secīgā intervālā. Vienā gadā pieņemtas 365,25 dienas.
 
-Metode: bruteforce_results.
+Matricu kombināciju skaits ir visu rindu pieļaujamo variantu skaitu reizinājums: `M = R_1 * R_2 * ... * R_h`. Laika prognoze ir `t = M / v`, kur `v` ir kopējais pārbaudīto kombināciju skaits, dalīts ar to pārbaudes kopējo laiku. Pieņemts, ka izmērītais vidējais ātrums saglabājas visā kombināciju telpā.
 
-```console
-python benchmark_bruteforce.py examples/sparse_50.txt --samples 100000 --runs 5 --seed 0 --csv bruteforce_results/sparse50_repeat.csv
+
+### Pārlases rezultātu faili
+
+- [Sešu house piemēru mērījumi](bruteforce_results/benchmark_house_sizes_20261010.csv) un [metadati](bruteforce_results/benchmark_house_sizes_20261010.json).
+- [house_10 faktiskās pilnās pārlases mērījumi](bruteforce_results/benchmark_house10_full_20261010.csv) un [metadati](bruteforce_results/benchmark_house10_full_20261010.json).
+- [SA rezultāti, 50% režīms](results_all_iter100000_shift50.csv).
+
+Mērījumu atkārtošana PowerShell vidē. Ja izvades CSV vai tā JSON metadati jau eksistē, izvēlieties jaunu faila nosaukumu.
+
+```powershell
+$inputs = 5,10,15,20,30,50 | ForEach-Object { "examples/house_$_.txt" }
+python benchmark_bruteforce.py $inputs --samples 100000 --runs 5 --seed 0 --csv bruteforce_results/house_sizes_repeat.csv
+python benchmark_bruteforce.py examples/house_10.txt --samples 10418625 --runs 5 --seed 0 --csv bruteforce_results/house10_full_repeat.csv
 ```
