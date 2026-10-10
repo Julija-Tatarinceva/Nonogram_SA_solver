@@ -15,10 +15,8 @@ Konsoles programma Python 3.10 vai jaunākai versijai. Risinātājs, līniju var
 | [nonogram_solver/__init__.py](nonogram_solver/__init__.py) | Paketes publiskās funkcijas importēšanai. |
 | [tests/](tests/) | 15 korektuma testi SA un pārlases pārbaudēm. |
 | [benchmark_bruteforce.py](benchmark_bruteforce.py) | Pilnās pārlases ātruma mērījums. |
-| [bruteforce_results/](bruteforce_results/report_lv.md) | Faktiskie pārlases mērījumi un atsevišķi apzīmēta ekstrapolācija. |
 | [examples/](examples/) | Visas 35 testa matricas. |
 | [old test results/](old%20test%20results/) | Iepriekšējie eksperimenti, papildu palaišanu CSV un rezultātu rezerves kopijas. |
-| [run_time_experiment.py](run_time_experiment.py) | Palīgskripts agrāko divu 15 sekunžu eksperimentu atkārtošanai. |
 
 ## Testa matricas un ievade
 
