@@ -1,0 +1,141 @@
+{
+  "timestamp_utc": "2026-10-10T12:11:43.777697+00:00",
+  "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Python314\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "AMD Ryzen 5 9600X 6-Core Processor",
+  "logical_processors": 12,
+  "samples": 100000,
+  "runs": 5,
+  "seed": 0,
+  "max_patterns": 100000,
+  "results": [
+    {
+      "input": "examples\\sparse_5.txt",
+      "combinations": "1875",
+      "checked_per_run": 1875,
+      "full_scan": true,
+      "preparation_seconds": 2.0200000108161476e-05,
+      "scan_seconds_mean": 0.0015732000001662527,
+      "scan_seconds_sd": 6.718258899985206e-06,
+      "checks_per_second": 1191838.2912546743,
+      "rate_min": 1186408.5038601705,
+      "rate_max": 1198695.819065531,
+      "solutions_per_run": [
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "full_scan_seconds_measured": 0.0015732000001662527,
+      "full_scan_seconds_estimate_log10": null
+    },
+    {
+      "input": "examples\\sparse_10.txt",
+      "combinations": "69457500000",
+      "checked_per_run": 100000,
+      "full_scan": false,
+      "preparation_seconds": 5.880000026081689e-05,
+      "scan_seconds_mean": 0.10766702000000805,
+      "scan_seconds_sd": 0.009743398334721976,
+      "checks_per_second": 928789.5216194572,
+      "rate_min": 863661.527598353,
+      "rate_max": 1036057.923921053,
+      "solutions_per_run": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "full_scan_seconds_measured": null,
+      "full_scan_seconds_estimate_log10": 4.87380184044145
+    },
+    {
+      "input": "examples\\sparse_15.txt",
+      "combinations": "182400427847997481831188480000000",
+      "checked_per_run": 100000,
+      "full_scan": false,
+      "preparation_seconds": 0.0006250999995245365,
+      "scan_seconds_mean": 0.1375029799999538,
+      "scan_seconds_sd": 0.030737566005946355,
+      "checks_per_second": 727256.9656310983,
+      "rate_min": 522670.8480340552,
+      "rate_max": 836282.6233866978,
+      "solutions_per_run": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "full_scan_seconds_measured": null,
+      "full_scan_seconds_estimate_log10": 26.399337963107484
+    },
+    {
+      "input": "examples\\sparse_20.txt",
+      "combinations": "520354241581179056114983198469069408777208138276274176000000",
+      "checked_per_run": 100000,
+      "full_scan": false,
+      "preparation_seconds": 0.007376200000180688,
+      "scan_seconds_mean": 0.14203255999982503,
+      "scan_seconds_sd": 0.0038267604849024418,
+      "checks_per_second": 704063.9132331572,
+      "rate_min": 690360.7687317525,
+      "rate_max": 733829.1572362415,
+      "solutions_per_run": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "full_scan_seconds_measured": null,
+      "full_scan_seconds_estimate_log10": 53.86868701384858
+    },
+    {
+      "input": "examples\\sparse_30.txt",
+      "combinations": "117336310029460822735076497194169644202630229572484311945997248093406567447819346668556309313620741878339076096000",
+      "checked_per_run": 100000,
+      "full_scan": false,
+      "preparation_seconds": 0.08633360000021639,
+      "scan_seconds_mean": 0.19275154000006295,
+      "scan_seconds_sd": 0.0019412034292606297,
+      "checks_per_second": 518802.599449879,
+      "rate_min": 511598.186690675,
+      "rate_max": 526101.7491311576,
+      "solutions_per_run": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "full_scan_seconds_measured": null,
+      "full_scan_seconds_estimate_log10": 107.35443028304148
+    },
+    {
+      "input": "examples\\sparse_50.txt",
+      "combinations": "116693367107512052472219646391480987758631457157822104631963116643129696527785901996688393010909892905744539938661091821802445423656333217644995813514533657376786273617838080000000000000000000000000000000000000000000000000000000000000",
+      "checked_per_run": 100000,
+      "full_scan": false,
+      "preparation_seconds": 2.776909600000181,
+      "scan_seconds_mean": 0.33146109999997864,
+      "scan_seconds_sd": 0.006147515950925649,
+      "checks_per_second": 301694.5276534907,
+      "rate_min": 295066.3722292588,
+      "rate_max": 310397.25261184893,
+      "solutions_per_run": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "full_scan_seconds_measured": null,
+      "full_scan_seconds_estimate_log10": 227.58747873858496
+    }
+  ],
+  "method": "Full-board checks; no prefix pruning; never stops at the first solution. Partial scans use random contiguous windows. Full-space times for partial scans are extrapolations."
+}
